@@ -12,7 +12,7 @@ class MyWidget extends StatefulWidget {
 }
 
 class _MyWidgetState extends State<MyWidget> {
-  int compteur = 0; // variable dynamique
+  int compteur = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -27,13 +27,36 @@ class _MyWidgetState extends State<MyWidget> {
               const SizedBox(height: 20),
               Text("La valeur du compteur est : $compteur"),
               const SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    compteur++;
-                  });
-                },
-                child: const Text("Incrémenter"),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        compteur--;
+                      });
+                    },
+                    child: const Text("-"),
+                  ),
+                  const SizedBox(width: 10),
+                  ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        compteur = 0;
+                      });
+                    },
+                    child: const Text("Réinitialiser"),
+                  ),
+                  const SizedBox(width: 10),
+                  ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        compteur++;
+                      });
+                    },
+                    child: const Text("+"),
+                  ),
+                ],
               ),
             ],
           ),
