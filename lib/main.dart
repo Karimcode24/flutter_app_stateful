@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyWidget());
+  runApp(const MyWidget());
 }
 
 class MyWidget extends StatefulWidget {
@@ -30,31 +30,31 @@ class _MyWidgetState extends State<MyWidget> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ElevatedButton(
+                  IconButton(
                     onPressed: () {
                       setState(() {
                         compteur--;
                       });
                     },
-                    child: const Text("-"),
+                    icon: const Icon(Icons.remove),
                   ),
                   const SizedBox(width: 10),
-                  ElevatedButton(
+                  IconButton(
                     onPressed: () {
                       setState(() {
                         compteur = 0;
                       });
                     },
-                    child: const Text("Réinitialiser"),
+                    icon: const Icon(Icons.refresh),
                   ),
                   const SizedBox(width: 10),
-                  ElevatedButton(
+                  IconButton(
                     onPressed: () {
                       setState(() {
                         compteur++;
                       });
                     },
-                    child: const Text("+"),
+                    icon: const Icon(Icons.add),
                   ),
                 ],
               ),
